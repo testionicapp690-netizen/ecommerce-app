@@ -1,0 +1,13 @@
+{
+  "name": "ecommerce-superapp",
+  "private": true,
+  "workspaces": ["backend", "admin-panel", "mobile-app"],
+  "scripts": {
+    "dev": "concurrently \"npm --workspace backend run dev\" \"npm --workspace admin-panel run dev\"",
+    "test": "npm --workspace backend test && npm --workspace mobile-app test",
+    "lint": "npm --workspace backend run lint && npm --workspace admin-panel run lint"
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.1"
+  }
+}
